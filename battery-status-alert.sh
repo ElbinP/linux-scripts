@@ -3,7 +3,7 @@
     do
        export DISPLAY=:0.0
        battery_level=`acpi -b | grep -P -o '[0-9]+(?=%)'`
-       adapter_status=`acpi -a|grep -P -o 'on-line'`
+       adapter_status=`acpi -a`
        if [[ $adapter_status == *"on-line"* ]]; then
            if [ $battery_level -ge 80 ]; then
               notify-send "Battery Full" "Level: ${battery_level}% "
