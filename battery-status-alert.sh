@@ -5,7 +5,7 @@
        battery_level=`acpi -b | grep -P -o '[0-9]+(?=%)'`
        adapter_status=`acpi -a`
        if [[ $adapter_status == *"on-line"* ]]; then
-           if [ $battery_level -ge 80 ]; then
+           if [ $battery_level -ge 90 ]; then
               notify-send "Battery Full" "Level: ${battery_level}% "
               paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
            fi
